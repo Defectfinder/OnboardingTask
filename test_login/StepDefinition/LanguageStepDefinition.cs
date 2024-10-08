@@ -38,12 +38,13 @@ namespace test_login.StepDefinition
             profilePageObj.NavigateToProfile(driver);
         }
 
-        [When(@"Add the Language in language tab")]
-        public void WhenAddTheLanguageInLanguageTab()
+        [When(@"'([^']*)' the Language in language tab")]
+        public void WhenTheLanguageInLanguageTab(string add)
         {
             LanguageTab langTabObj = new LanguageTab();
-            langTabObj.AddLanguage(driver);
+            langTabObj.AddLanguage(driver,add);
         }
+
 
         [When(@"Edited the '(.*)'")]
         public void WhenEditedThe(string language)

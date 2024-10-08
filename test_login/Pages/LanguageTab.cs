@@ -11,7 +11,7 @@ namespace test_login.Pages
 {
     public class LanguageTab
     {
-        public void AddLanguage(IWebDriver driver)
+        public void AddLanguage(IWebDriver driver, string add)
         {
             // Select the Language tab
             IWebElement langTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]"));
@@ -29,7 +29,7 @@ namespace test_login.Pages
             IWebElement fillLang = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input"));
             fillLang.Clear();
             Thread.Sleep(3000);
-            fillLang.SendKeys("English");
+            fillLang.SendKeys(add);
 
             // Select the Level of language from dropdown
             IWebElement levelDropdown = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[2]/select"));
